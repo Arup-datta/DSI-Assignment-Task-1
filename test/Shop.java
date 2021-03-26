@@ -17,7 +17,7 @@ public class Shop {
 				/// Add product
 				
 				System.out.println("Enter product name: ");
-				String name = sc.next();
+				int name = sc.nextInt();
 				System.out.println("Enter buy price: ");
 				int buy = sc.nextInt();
 				System.out.println("Enter sell price: ");
@@ -28,19 +28,21 @@ public class Shop {
 				
 				list.addProduct(name, buy, sell, count);
 				
+				System.out.println("Product is added!");
+				
 			}
 			else if(choice == 2) {
 				// Delete a Product
 				
 				System.out.println("Enter the name of the product that you want to delete: ");
-				String name = sc.next();
+				int name = sc.nextInt();
 				list.deleteProduct(name);
 			}
 			else if(choice == 3) {
 				// Buy product
 				
 				System.out.println("Enter the product name you want to buy: ");
-				String name = sc.next();
+				int name = sc.nextInt();
 				System.out.println("Enter the amount of product you want to buy: ");
 				int amount = sc.nextInt();
 				
@@ -51,7 +53,7 @@ public class Shop {
 				/// Sell product
 				
 				System.out.println("Enter the product name you want to sell: ");
-				String name = sc.next();
+				int name = sc.nextInt();
 				System.out.println("Enter the amount of product you want to sell: ");
 				int amount = sc.nextInt();
 				

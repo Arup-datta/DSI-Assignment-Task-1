@@ -4,10 +4,9 @@ import java.util.HashMap;
 
 
 public class Product {
-	private String name;
-	private int buyPrice, sellPrice, availablePieces, profit;
+	private int name, buyPrice, sellPrice, availablePieces, profit;
 
-	Product(String name, int buyPrice, int sellPrice, int availablePieces) {
+	Product(int name, int buyPrice, int sellPrice, int availablePieces) {
 		/// constructor to set product information
 		this.buyPrice = buyPrice;
 		this.sellPrice = sellPrice;
@@ -53,7 +52,7 @@ public class Product {
 		availablePieces -= count;
 	}
 	
-	public String getProductName() {
+	public int getProductName() {
 		/// returns the name of the product
 		return name;
 	}
@@ -63,7 +62,7 @@ public class Product {
 		/// A getter method used to return the whole product information
 	
 		HashMap<String, String> product = new HashMap<String, String>();
-		product.put("Name", name);
+		product.put("Name", name + "");
 		product.put("Buy", buyPrice + "");
 		product.put("Sell", sellPrice + "");
 		product.put("Count", availablePieces + "");

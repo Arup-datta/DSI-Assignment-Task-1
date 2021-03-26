@@ -10,7 +10,7 @@ public class ProductList {
 		products.clear();
 	}
 	
-	public void addProduct(String name, int buy, int sell, int availableNumber) {
+	public void addProduct(int name, int buy, int sell, int availableNumber) {
 		/// Adds new product to the product list
 		
 		Product newProduct = new Product(name, buy, sell, availableNumber);
@@ -31,19 +31,19 @@ public class ProductList {
 	}
 	*/
 	
-	public boolean searchProduct(String name) {
+	public boolean searchProduct(int name) {
 		/// check if a product already exists or not
 		
 		for(int i = 0 ; i < products.size(); ++i) {
 			Product p = products.get(i);
-			if(p.getProductName().equals(name)) {
+			if(p.getProductName() == name) {
 				return true;
 			}
 		}
 		return false;
 	} 
 	
-	public void deleteProduct(String name) {
+	public void deleteProduct(int name) {
 		// Deletes a product by searching it by name from the product list
 		if(products.size() == 0) {
 			System.out.println("Product list is already empty! Can't delete the product!");
@@ -52,8 +52,7 @@ public class ProductList {
 		int index = -1;
 		for(int i = 0 ; i < products.size(); i++) {
 			Product p = products.get(i);
-			String productName = p.getProductName();
-			if(productName.equals(name)) {
+			if(p.getProductName() == name) {
 				index = i;
 				break;
 			}
@@ -68,11 +67,11 @@ public class ProductList {
 	}
 	
 	
-	public void buyProduct(String name, int count) {
+	public void buyProduct(int name, int count) {
 		/// when a product is bought, the amount is added to the inventory
 		for(int i = 0 ; i < products.size() ; ++i) {
 			Product p = products.get(i);
-			if(p.getProductName().equals(name)) {
+			if(p.getProductName() == name) {
 				p.addProduct(count); /// adding instances to the existing product
 				products.set(i, p); /// updating the product list
 				
@@ -84,10 +83,10 @@ public class ProductList {
 		}
 	}
 	
-	public void sellProduct(String name, int count) {
+	public void sellProduct(int name, int count) {
 		for(int i = 0 ; i < products.size() ; ++i) {
 			Product p = products.get(i);
-			if(p.getProductName().equals(name)) { /// searching for that product
+			if(p.getProductName() == name) { /// searching for that product
 				if(count > p.piecesAvailable()) { 
 					/// if there is not enough product to sell.. the we can't sell
 					System.out.println("Not enough item to sell!\n");
