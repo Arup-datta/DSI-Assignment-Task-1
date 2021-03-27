@@ -7,7 +7,8 @@ public class Shop {
 	public void start() {
 		// start function contains the conditions to run the program
 		Scanner sc = new Scanner(System.in);
-		ProductList list = new ProductList();
+		ProductList list = new ProductList(); 
+		
 		
 		while(true) {
 			System.out.println("Enter operation number:\n");
@@ -28,8 +29,7 @@ public class Shop {
 				
 				list.addProduct(name, buy, sell, count);
 				
-				System.out.println("Product is added!");
-				
+	
 			}
 			else if(choice == 2) {
 				// Delete a Product
@@ -68,7 +68,7 @@ public class Shop {
 			else if(choice == 6) {
 				/// check available balance
 				
-				System.out.println("Total balance: " + Balance.getBalance());
+				System.out.println("Total balance: " + Balance.balance);
 			}
 			else {
 				// terminate the program
